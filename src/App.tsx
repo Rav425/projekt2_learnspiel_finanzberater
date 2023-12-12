@@ -8,6 +8,8 @@ const App: React.FC = () => {
   const handleCardClick = (card: string) => {
     if (card === 'Einführung') {
       navigate('/introduction'); // Wenn die "Einführung"-Karte geklickt wird, navigieren Sie zur Einführungsseite.
+    }  else if (card === 'Fähigkeiten') {
+      navigate('/fahigkeiten'); // Navigieren zur Fähigkeiten-Seite, wenn die entsprechende Karte geklickt wird.
     } else {
       console.log(`Karte ${card} wurde geklickt.`);
       // Weitere Aktionen für andere Karten
