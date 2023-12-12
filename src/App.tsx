@@ -38,7 +38,7 @@ const App: React.FC = () => {
         <div className="col-md-5 mb-4">
           <div className="card h-100" onClick={() => handleCardClick('Einführung')} style={{ cursor: 'pointer' }}>
             <div className="card-body">
-              <p className="card-text">Einführung zur "Finanzberatung" - Beschreibung der Einführung...</p>
+              <p className="card-text">Einführung zur "Finanzberatung" </p>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@ const App: React.FC = () => {
         <div className="col-md-5 mb-4">
           <div className="card h-100" onClick={() => handleCardClick('Fähigkeiten')} style={{ cursor: 'pointer' }}>
             <div className="card-body">
-              <p className="card-text">Was soll man als Finanzberater können? - Beschreibung der Fähigkeiten...</p>
+              <p className="card-text">Fähigkeiten & Fachkompetenz </p>
             </div>
           </div>
         </div>
