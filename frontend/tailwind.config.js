@@ -6,6 +6,11 @@ export default {
   theme: {
     extend: {},
   },
+  variants: {
+    extends: {
+      scale: ['group-hover'],
+    },
+  },
   plugins: [],
 }
 

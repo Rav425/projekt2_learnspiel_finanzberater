@@ -9,13 +9,15 @@ export default function Signup() {
     <div className="flex justify-center items-center h-screen bg-gray-200">
       <form action="" className="max-w-[500px] w-full mx-auto p-4 bg-white rounded-md">
         <h2 className="text-center text-3xl font-bold py-2">Registrierung</h2>
-        <div className="flex flex-col py-2">
-          <label className="mb-1 font-semibold">Vorname</label>
-          <input className="border border-gray-400 p-2 focus:outline-blue-300 text-gray-800" type="text" />
-        </div>
-        <div className="flex flex-col py-2">
-          <label className="mb-1 font-semibold">Nachname</label>
-          <input className="border border-gray-400 p-2 focus:outline-blue-300 text-gray-800" type="text" />
+        <div className="grid sm:gap-0 sm:grid-cols-1 md:gap-4 md:grid-cols-2 ">
+          <div className="flex flex-col py-2">
+            <label className="mb-1 font-semibold">Vorname</label>
+            <input className="border border-gray-400 p-2 focus:outline-blue-300 text-gray-800" type="text" />
+          </div>
+          <div className="flex flex-col py-2">
+            <label className="mb-1 font-semibold">Nachname</label>
+            <input className="border border-gray-400 p-2 focus:outline-blue-300 text-gray-800" type="text" />
+          </div>
         </div>
         <div className="flex flex-col py-2">
           <label className="mb-1 font-semibold">Benutzername</label>
@@ -50,4 +52,4 @@ export default function Signup() {
       </form>
     </div>
   );
-}1
+}
