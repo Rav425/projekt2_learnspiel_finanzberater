@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import db from "./config/db_connection.ts"
 dotenv.config({ path: './.env' })
+import userRoutes from "./routes/user.route.ts"
 const app = express();
 
 console.log(process.env.PORT);
@@ -24,6 +25,7 @@ app.listen(port, ()=> {
     console.log(`Server is running on http://localhost:${port}`);
     
 })
-console.log("Hello Typescript!");
+
+app.use('/api/user', userRoutes)
 
 export default app;
