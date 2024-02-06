@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import db from "./config/db_connection.ts"
 dotenv.config({ path: './.env' })
 import userRoutes from "./routes/user.route.ts"
+import authRoutes from "./routes/auth.route.ts"
+
 const app = express();
 
 console.log(process.env.PORT);
@@ -26,6 +28,7 @@ app.listen(port, ()=> {
     
 })
 
-app.use('/api/user', userRoutes)
+app.use('/api/user', userRoutes);
+app.use('/api/auth', authRoutes);
 
 export default app;
