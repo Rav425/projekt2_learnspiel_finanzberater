@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 export default function Signup() {
   // Zustand für die Sichtbarkeit des Passwort zu verwalten.
   const [visible, setVisible] = useState(false);
+  
   return (
     <div className="flex justify-center items-center h-screen bg-gray-200">
       <form action="" className="max-w-[500px] w-full mx-auto p-4 bg-white rounded-md">

@@ -1,13 +1,12 @@
 import express from "express";
-import dotenv from "dotenv";
 import db from "./config/db_connection.ts"
-dotenv.config({ path: './.env' })
 import userRoutes from "./routes/user.route.ts"
 import authRoutes from "./routes/auth.route.ts"
 
 const app = express();
+app.use(express.json())
 
-console.log(process.env.PORT);
+console.log(process.env.DB_NAME);
 
 const port = process.env.PORT || 3008 ;
 

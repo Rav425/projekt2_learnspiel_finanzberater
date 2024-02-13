@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import { useTimer } from 'react-timer-hook';
 // import Countdown from '../countdown/Countdown';
+import { MdOutlineTimer } from 'react-icons/md';    
 
 export default function Level1Quiz1() {
     // Provisorische Fragen um für Textzwecke
@@ -63,7 +64,8 @@ export default function Level1Quiz1() {
                 <div className='grid grid-col-4 gap-6'>
                     <div className="flex items-center gap-2">
                         {/* <Countdown /> */}
-                        <p className="font-bold text-3xl">1:30</p>
+                        <MdOutlineTimer size={28} />
+                        <p className="font-bold text-3xl">00:30</p>
                         <span>für diese Frage</span>
                     </div>
                     <div className="flex justify-end">
