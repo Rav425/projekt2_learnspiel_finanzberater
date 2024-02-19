@@ -12,14 +12,14 @@ import { useState } from "react";
 // import { BrowserRouter as  Routes, Route } from 'react-router-dom';
 
 export default function Sidebar() {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     // const location = useLocation();
 
     const menuItem = [
         
         {
-          path: "/adminCategories",
+          path: "/adminCategory",
         //   component: AdminCategory,
           name: "Kategorien",
           icon: <BiSolidCategoryAlt />,
@@ -52,7 +52,8 @@ export default function Sidebar() {
         },
     ];
   return (
-    <div className={`bg-slate-800 text-white w-64 h-screen space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out ${isOpen ? "w-48" : "w-16"}`}>
+    // <div className={`z-10 bg-slate-800 text-white h-screen space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out ${isOpen ? 'w-64' : 'w-15'}`}>
+    <div className={`z-10 bg-slate-800 text-white h-screen space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform md:relative transition duration-200 ease-in-out ${isOpen ? 'w-64' : 'w-20'}`}>
         <div className="">
         <IoMenu size="32" onClick={toggle}/>
         </div>
@@ -66,8 +67,6 @@ export default function Sidebar() {
                     </Link>
 
                 ))}
-        
-
     </div>
   )
 }

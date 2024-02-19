@@ -7,5 +7,12 @@ export default defineConfig({
   server: {
     open: true,
     port: 3001,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3008',
+        secure: false,
+        // rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
   }
 })

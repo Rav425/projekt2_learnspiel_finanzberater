@@ -2,6 +2,7 @@ import db from "../config/db_connection.ts";
 import { Request, Response, NextFunction } from "express";
 import bcryptjs from "bcryptjs";
 import { RowDataPacket } from "mysql2";
+import { errorHandler } from "../utils/error.ts";
 
 export const signup = async (req: Request, res: Response, next: NextFunction) => {
     try {

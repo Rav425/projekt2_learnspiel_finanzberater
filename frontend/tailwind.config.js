@@ -8,7 +8,7 @@ export default {
   },
   variants: {
     extends: {
-      scale: ['group-hover'],
+      scale: ['group-hover', 'hover'],
     },
   },
   plugins: [],
