@@ -1,11 +1,52 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+// import { signInStart, signInSuccess, signInFailure } from "../../redux/user/userSlice";
 
 
 export default function Login() {
   // Zustand für die Sichtbarkeit des Passwort zu verwalten.
   const [visible, setVisible] = useState(false);
+
+  // const [formData, setFormData] = useState<FormData>({});
+  // const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  // const [loading, setLoading] = useState(false)
+
+  // const navigate = useNavigate()
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   setFormData({...formData, [e.target.id]: e.target.value.trim()})
+  // }
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault()
+  //   console.log(formData);
+  //   if (!formData.firstname || !formData.lastname || !formData.username || !formData.email || !formData.password || !formData.confirmPassword) {
+  //     return setErrorMessage("Bitte füllen Sie alle Felder aus");
+  //   }
+  //   try {
+  //     console.log(formData);
+  //     setLoading(true);
+  //     setErrorMessage(null);
+  //     const response = await fetch('/api/auth/signup', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json'},
+  //       body: JSON.stringify(formData),
+  //     } )
+  //     if (!response.ok) {
+  //       const data = await response.json()
+  //       console.log(data)
+  //       if (data.success === false) {
+  //         return setErrorMessage(data.message);
+  //       }
+  //     }
+  //     setLoading(false);
+  //     navigate('/sign-in');
+  //   } catch (error) {
+  //     if (error instanceof Error) {
+  //       setErrorMessage(error.message);
+  //       setLoading(false);
+  //     }
+  //   }
+  // };
   return (
     <div className="flex justify-center items-center h-screen bg-gray-200">
       <form action="" className="max-w-[500px] w-full mx-auto p-4 bg-white rounded-md">
