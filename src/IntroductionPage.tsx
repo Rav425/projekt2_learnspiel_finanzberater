@@ -1,13 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Card, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChartLine, faBook, faQuestionCircle, faComments } from '@fortawesome/free-solid-svg-icons';
 
 const IntroductionPage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleBoxClick = (boxName: string) => {
     console.log(`${boxName} Box wurde geklickt.`);
-    // Hier könnten Sie beispielsweise navigieren oder eine andere Aktion durchführen
-    // navigate(`/${boxName.toLowerCase()}`);
+    navigate(`/${boxName.toLowerCase()}`);
   };
 
   return (
@@ -15,24 +17,36 @@ const IntroductionPage: React.FC = () => {
       <h1>Fachkenntnisse</h1>
       <div className="d-flex flex-wrap justify-content-between">
         {/* Box 1 */}
-        <div className="p-3" style={{ border: '1px solid black', cursor: 'pointer' }} onClick={() => handleBoxClick('ThemaFinanzen')}>
-          <h3>Thema "Finanzen"</h3>
-        </div>
+        <Card className="m-2" style={{ width: '18rem' }} onClick={() => handleBoxClick('ThemaFinanzen')}>
+          <Card.Body>
+            <Card.Title><FontAwesomeIcon icon={faChartLine} /> Thema "Finanzen"</Card.Title>
+            <Button variant="primary">Erfahren Sie mehr</Button>
+          </Card.Body>
+        </Card>
 
         {/* Box 2 */}
-        <div className="p-3" style={{ border: '1px solid black', cursor: 'pointer' }} onClick={() => handleBoxClick('Finanzberatung')}>
-          <h3>Finanzberatung</h3>
-        </div>
+        <Card className="m-2" style={{ width: '18rem' }} onClick={() => handleBoxClick('Finanzberatung')}>
+          <Card.Body>
+            <Card.Title><FontAwesomeIcon icon={faBook} /> Finanzberatung</Card.Title>
+            <Button variant="primary">Erfahren Sie mehr</Button>
+          </Card.Body>
+        </Card>
 
         {/* Box 3 */}
-        <div className="p-3" style={{ border: '1px solid black', cursor: 'pointer' }} onClick={() => handleBoxClick('WichtigeBegriffe')}>
-          <h3>Wichtige Begriffe und Definitionen</h3>
-        </div>
+        <Card className="m-2" style={{ width: '18rem' }} onClick={() => handleBoxClick('WichtigeBegriffe')}>
+          <Card.Body>
+            <Card.Title><FontAwesomeIcon icon={faQuestionCircle} /> Wichtige Begriffe und Definitionen</Card.Title>
+            <Button variant="primary">Erfahren Sie mehr</Button>
+          </Card.Body>
+        </Card>
 
         {/* Box 4 */}
-        <div className="p-3" style={{ border: '1px solid black', cursor: 'pointer' }} onClick={() => handleBoxClick('WiesoFinanzberatung')}>
-          <h3>Wieso Finanzberatung?</h3>
-        </div>
+        <Card className="m-2" style={{ width: '18rem' }} onClick={() => handleBoxClick('WiesoFinanzberatung')}>
+          <Card.Body>
+            <Card.Title><FontAwesomeIcon icon={faComments} /> Wieso Finanzberatung?</Card.Title>
+            <Button variant="primary">Erfahren Sie mehr</Button>
+          </Card.Body>
+        </Card>
       </div>
     </div>
   );

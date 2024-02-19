@@ -1,0 +1,41 @@
+/* LevelSelectorPage.css */
+/* LevelSelectorPage.css */
+.level-selector-container {
+    min-height: 100vh;
+    background: linear-gradient(to right, #e6e6e6, #a8a8a8); /* Grauer Farbverlauf */
+    color: #333; /* Dunkelgrauer Text für besseren Kontrast auf hellem Hintergrund */
+    padding-top: 50px;
+  }
+  
+  .level-card {
+    background: rgba(255, 255, 255, 0.8); /* Leicht transparentes Weiß für die Karten */
+    backdrop-filter: blur(5px); /* Geringere Unschärfe für einen subtilen Effekt */
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .level-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Dunkler Schatten für besseren Kontrast */
+  }
+  
+  .level-card .btn-outline-light {
+    border-color: #333; /* Dunkelgrauer Rahmen für die Schaltflächen */
+    color: #333; /* Dunkelgrauer Text für die Schaltflächen */
+  }
+  
+  .level-card .btn-outline-light:hover {
+    background-color: #333; /* Dunkelgrauer Hintergrund beim Hover */
+    color: #fff; /* Weißer Text beim Hover */
+  }
+  
+  .display-4 {
+    font-weight: 300;
+  }
+  
+  .lead {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  

@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "public/App.tsx", "public/FahigkeitenPage.tsx", "public/Fragen.tsx", "public/IntroductionPage.tsx", "public/LeaderboardPage.tsx", "public/LevelSelectorPage.tsx", "public/Login.tsx", "public/main.tsx", "public/Risiko.tsx", "public/Risikobewertung.tsx", "public/Risikoidentifikation.tsx", "public/Signup.tsx", "public/test.tsx", "public/vite-env.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
