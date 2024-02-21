@@ -7,7 +7,7 @@ import authRoutes from "./routes/auth.route.ts"
 const app = express();
 app.use(express.json())
 
-console.log(process.env.DB_NAME);
+console.log(process.env.PORT);
 
 const port = process.env.PORT || 3008 ;
 
@@ -15,7 +15,7 @@ db.connect((err) => {
     if (err) {
         console.log(err);
     }else {
-        console.log("Connected to MySQL DB 🔥");
+        console.log("Connected to MySQL DB 🚀");
     }
 });
 
