@@ -44,3 +44,24 @@ export const signup = async (req: Request, res: Response, next: NextFunction) =>
     }
     
 };
+
+export const login = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        // email or username
+        
+        const { email, nickname, password } = req.body;
+        const query = `SELECT * FROM benutzer WHERE email = ?`;
+        const [rows] = await db.promise().query<RowDataPacket[]>(query, [ email]);
+        if (rows.length === 0) {
+            return res.status(404).json({message: "Benutzer nicht gefunden."});
+        }
+        const user = rows[0];
+        const passwordMatch = bcryptjs.compareSync(password, user.passwort);
+        if (!passwordMatch) {
+            return res.status(401).json({message: "Passwort ist falsch."});
+        }
+        res.status(200).json({message: "Erfolgreich eingeloggt."});
+    } catch (error) {
+        next(error);
+    }
+};
