@@ -9,7 +9,7 @@ const LevelSelectorPage: React.FC = () => {
   const handleLevelClick = (level: string) => {
     switch (level) {
       case '1':
-        navigate('/level2'); // Navigieren zur Einführungsseite
+        navigate('/Level1Scenario1'); // Navigieren zur Einführungsseite
         break;
       case '2':
         navigate('/level2'); // Navigieren zur Fähigkeiten-Seite

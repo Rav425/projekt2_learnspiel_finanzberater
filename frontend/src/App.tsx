@@ -3,6 +3,9 @@
 // import Signup from "./components/Signup";
 import Level1Quiz1 from "./components/levels/Level1Quiz1";
 import Level1Scenario1 from "./components/levels/Level1Scenario1";
+import Level1Scenario2 from "./components/levels/Level1Scenario2";
+import Level2Scenario1 from "./components/levels/Level2Scenario1";
+
 import Leaderboard from "./components/Leaderboard";
 import { Routes, Route} from "react-router-dom";
 import Dashboard from "./pages/admin/admin/Dashboard";
@@ -19,6 +22,7 @@ import Risikomagement from './pages/Risikomanagement';
 import Risikoidentifikation from './pages/Risikoidentifikation';
 import Risikobewertung from './pages/Risikobewertung';
 import Fragen from './pages/Fragen';
+
 
 function App() {
 
@@ -44,6 +48,11 @@ function App() {
           <Route path="/risikoidentifikation" element={<Risikoidentifikation />} />
           <Route path="/risikobewertung" element={<Risikobewertung />} />
           <Route path="/level2" element={< Fragen/>} />
+          <Route path="/level2Scenario1" element={<Level2Scenario1 />} />
+          <Route path="/level1Scenario2" element={<Level1Scenario2 />} />
+       
+          
+          
       </Routes>
     </div>
   )

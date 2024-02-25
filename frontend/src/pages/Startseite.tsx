@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './LevelSelectorPage.css'; // Ihr CSS-Dateipfad
+import video from '../assets/Untitled Video.mp4';
 const App: React.FC = () => {
   const navigate = useNavigate();
 
@@ -33,7 +34,7 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      <h2 className="text-center mb-4" style={{ color: '#007bff' }}>Lernspiel "der Finanzberater"</h2>
+      <h1 className="text-center mb-4" style={{ color: '#007bff' }}>Lernspiel "der Finanzberater"</h1>
       <div className="row">
         <div className="col-12">
           <div className="text-center mt-3 mb-3" style={{ color: '#555' }}>
@@ -63,12 +64,26 @@ const App: React.FC = () => {
             <div className="card-body">
               <p className="card-text">Fähigkeiten & Fachkompetenz</p>
             </div>
+           
           </div>
+          
         </div>
-      </div>
+        
+      </div> 
+      
 
       <div className="row">
         <div className="col-12 text-center">
+        <div className="video-container">
+    
+    <div style={{ display: 'flex', justifyContent: 'center'}}>
+      
+      <video width="750" height="500" controls autoPlay >
+        <source src={video} type="video/mp4" />
+        Ihr Browser unterstützt das Video-Tag nicht.
+      </video>
+    </div>
+  </div>
           <button className="btn btn-primary mt-3" onClick={() => handleCardClick('Start')}>Start!</button>
         </div>
       </div>
