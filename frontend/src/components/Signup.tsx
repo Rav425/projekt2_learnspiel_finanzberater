@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { signInFailure, signInStart, signInSuccess } from "../../redux/user/userSlice";
+import { RootState } from "../../redux/store";
 
 export default function Signup() {
   // Zustand für die Sichtbarkeit des Passwort zu verwalten.
@@ -9,7 +12,7 @@ export default function Signup() {
   interface FormData {
     firstname?: string;
     lastname?: string;
-    username?: string;
+    nickname?: string;
     email?: string;
     password?: string;
     confirmPassword?: string;
@@ -17,9 +20,9 @@ export default function Signup() {
 
   const [formData, setFormData] = useState<FormData>({});
   // const [formData, setFormData] = useState({})
-  const [errorMessage, setErrorMessage] = useState<string | null>(null)
-  const [loading, setLoading] = useState(false)
+  const { loading, error: errorMessage} = useSelector((state: RootState) => state.user);
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({...formData, [e.target.id]: e.target.value.trim()})
   }
@@ -27,13 +30,12 @@ export default function Signup() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log(formData);
-    if (!formData.firstname || !formData.lastname || !formData.username || !formData.email || !formData.password || !formData.confirmPassword) {
-      return setErrorMessage("Bitte füllen Sie alle Felder aus");
+    if (!formData.firstname || !formData.lastname || !formData.nickname || !formData.email || !formData.password || !formData.confirmPassword) {
+      return dispatch(signInFailure("Bitte füllen Sie alle Felder aus"));
     }
     try {
       console.log(formData);
-      setLoading(true);
-      setErrorMessage(null);
+      dispatch(signInStart());
       const response = await fetch('/api/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
@@ -43,15 +45,16 @@ export default function Signup() {
         const data = await response.json()
         console.log(data)
         if (data.success === false) {
-          return setErrorMessage(data.message);
+          return dispatch(signInFailure(data.message));
         }
+        dispatch(signInSuccess(data));
+
+      }else {
+        navigate('/');
       }
-      setLoading(false);
-      navigate('/sign-in');
     } catch (error) {
       if (error instanceof Error) {
-        setErrorMessage(error.message);
-        setLoading(false);
+        dispatch(signInFailure(error.message));
       }
     }
   };

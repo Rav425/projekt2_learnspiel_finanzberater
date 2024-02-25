@@ -19,28 +19,28 @@ export default function Sidebar() {
     const menuItem = [
         
         {
-          path: "/adminCategory",
+          path: "/admin/Category",
         //   component: AdminCategory,
           name: "Kategorien",
           icon: <BiSolidCategoryAlt />,
         },
         {
-          path: "/adminAddCategory",
+          path: "/admin/AddCategory",
           name: "Kategorie hinzufügen",
           icon: <TbCategoryPlus />,
         },
         {
-          path: "/adminQuizzes",
+          path: "/admin/Quizzes",
           name: "Quizzes",
           icon: <FaListUl />,
         },
         {
-          path: "/adminAddQuiz",
+          path: "/admin/AddQuiz",
           name: "Quiz erstellen",
           icon: <MdAddToPhotos />,
         },
         {
-            path: "/adminProfile",
+            path: "/admin/Profile",
             name: "Profil",
             icon: <FaUserAlt />,
         },

@@ -1,9 +1,17 @@
 import {createSlice} from '@reduxjs/toolkit';
 
+// export interface UserState {
+//       currentUser: any;
+//       loading: boolean;
+//       error: string | null;
+    
+//   }
+
+
 const initialState = {
     currentUser: null,
-    errors: null,
-    loading: false
+    loading: false,
+    error: null
 }
 
 const userSlice = createSlice({
@@ -12,19 +20,21 @@ const userSlice = createSlice({
     reducers: {
         signInStart: (state) => {
             state.loading = true;
-            state.errors = null;
+            state.error = null;
         },
         signInSuccess: (state, action) => {
             state.currentUser = action.payload;
             state.loading = false;
-            state.errors = null;
+            state.error = null;
         },
         signInFailure: (state, action) => {
             state.loading = false;
-            state.errors = action.payload;
+            state.error = action.payload;
         }
     }
 });
+
+
 
 export const {signInStart, signInSuccess, signInFailure} = userSlice.actions;
 
