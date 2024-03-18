@@ -8,42 +8,66 @@ import buttonNotification from '../../assets/audio/button-sound.mp3'
 
 const questions = [
     {
-        questionText: 'Was kann als Hauptstärke von einer Bank im Umgang mit den Auswirkungen von COVID-19 betrachtet werden?',
+        questionText: 'Was ist Finanz im Geschäftskundenkontext? Bitte wählen Sie die richtige Antwort aus', // 5 Punkte
         answerOptions: [
-            {answerText:'Engagement in der Gemeinschaft', isCorrect: true},
-            {answerText:'Rückgang der Einlagen', isCorrect: false},
-            {answerText:'Erhöhung der Betriebskosten', isCorrect: false},
-            {answerText:'Rückgang der Zinseneinahmen', isCorrect: false},
+            {answerText:'Die Bereitstellung von Finanzdienstleistungen und -produkten durch Banken und andere Finanzinstitute an Unternehmen.', isCorrect: true},
+            {answerText:'Die Verwaltung von Kapital und finanziellen Ressourcen innerhalb eines Unternehmens. ', isCorrect: false},
+            {answerText:'Die Bilanzierung und Berichterstattung über finanzielle Transaktionen in einem Unternehmen. ', isCorrect: false},
         ],
 
     },
     {
-        questionText: "Was kann als die Hauptschwäche von Bank im Kontext von COVID-19 betrachtet werden?",
+        questionText: "Bietet Finanzberatung eine breite Palette von Beratungsaspekten an, darunter Versicherungs-, Vorsorge-, Vermögens- und Anlagenberatung, Immobilienberatung sowie Schuldnerberatung?",    // 5 Punkte
         answerOptions: [
-            {answerText:'Rückgang des Engagements in der Gemeinschaft', isCorrect: false},
-            {answerText:'Mangelnde Vielfalt der Einnahmequellen', isCorrect: true},
-            {answerText:'Erhöhung der Werbung für digitale Produkte', isCorrect: false},
-            {answerText:' Erhöhung der Betriebskosten', isCorrect: false},
+            {answerText:'Richtig', isCorrect: true},
+            {answerText:'Falsch', isCorrect: false},
         ],
     },
     {
-        questionText: 'Was kann als die Hauptchance betrachtet werden, die von Bank genutzt wird, um dieser Situation zu begegnen?',
+        questionText: 'Was umfasst die Bedeutung von Liquidität im Kontext eines Unternehmens? Bitte wählen Sie die richtige Antwort aus.', // 5 Punkte
         answerOptions: [
-            {answerText:' Erhöhung der Betriebskosten', isCorrect: false},
-            {answerText:'Erhöhung der Werbung für digitale Produkte', isCorrect: true},
-            {answerText:' Rückgang des Engagements in der Gemeinschaft', isCorrect: false},
-            {answerText:'Rückgang der Einnahmen', isCorrect: false},
+            {answerText:'Die Fähigkeit eines Unternehmens, langfristige Verbindlichkeiten zu begleichen.', isCorrect: false},
+            {answerText:'Die Fähigkeit eines Unternehmens, kurzfristige Verbindlichkeiten mit vorhandenen liquiden Mitteln zu begleichen.', isCorrect: true},
+            {answerText:'Die Fähigkeit eines Unternehmens, langfristige Investitionen zu tätigen.', isCorrect: false},
         ],
     },
     {
-        questionText: 'Was kann als die Hauptbedrohung für Bank im Umgang mit den Auswirkungen von COVID-19 betrachtet werden?',
+        questionText: 'Was bezeichnet Compliance und welche Bedeutung hat sie für Unternehmen und Organisationen? Wählen Sie die richtige Antwort aus. ', // 5 Punkte
         answerOptions: [
-            {answerText: 'Erhöhung der Betriebskosten', isCorrect: true},
-            {answerText: 'Rückgang des Kreditrisikos', isCorrect: false},
-            {answerText: 'Rückgang der Zinseinnahmen', isCorrect: false},
-            {answerText: 'Rückgang der wirtschaftlichen Aktivitäten', isCorrect: false},
+            {answerText: 'Compliance bezeichnet die missbräuchliche Umgehung von Gesetzen und Richtlinien in Unternehmen und Organisationen, um wirtschaftliche Vorteile zu erlangen.', isCorrect: false},
+            {answerText: 'Compliance bezeichnet die konsequente Befolgung von Gesetzen, Richtlinien, Normen und freiwilligen Verpflichtungen in Unternehmen und Organisationen, um rechtliche und ethische Standards einzuhalten.', isCorrect: true},
+            {answerText: 'Compliance bezeichnet die Vernachlässigung von rechtlichen Vorgaben und ethischen Standards in Unternehmen und Organisationen, um Gewinne zu maximieren', isCorrect: false},
         ]
-    }
+    },
+
+    {
+        questionText: 'Was ist die Kreditwürdigkeit und welches Ziel verfolgt sie?', // 5 Punkte
+        answerOptions: [
+            {answerText: 'Die Kreditwürdigkeit ist ein Maß dafür, wie zuverlässig ein potenzieller Kreditnehmer seine finanziellen Verpflichtungen erfüllen kann, und zielt darauf ab, das Risiko eines Zahlungsausfalls zu minimieren.', isCorrect: true},
+            {answerText: 'Die Kreditwürdigkeit bezeichnet die finanzielle Stabilität eines Kreditgebers und zielt darauf ab, den potenziellen Gewinn aus Kreditvergaben zu maximieren.', isCorrect: false},
+            {answerText: 'Die Kreditwürdigkeit ist eine rechtliche Regelung, die die Bedingungen für die Kreditvergabe festlegt und zielt darauf ab, die Verbraucher vor ausbeuterischen Kreditpraktiken zu schützen.', isCorrect: false},
+        ]
+    },
+
+    {
+        questionText: 'Die Investitionsbewertung ist entscheidend, um die Rentabilität und den Nutzen von Investitionen zu bewerten. Dafür werden Techniken wie die Kapitalwertmethode, die interne Zinsfußmethode und die Amortisationsdauer angewendet. Bitte wählen Sie die richtige Antwort aus ', // 5 Punkte
+        answerOptions: [
+            {answerText: 'Richtig', isCorrect: true},
+            {answerText: 'Falsch', isCorrect: false},
+        ]
+    },
+
+    {
+        questionText: 'Welche Arten von Anleihen gibt es? Bitte wählen Sie die richtige Antwort aus ', // 5 Punkte
+        answerOptions: [
+            {answerText: 'Staatsanleihen und Unternehmensanleihen', isCorrect: true},
+            {answerText: 'Aktienanleihen und Hybridanleihen ', isCorrect: false},
+            {answerText: 'Pfandbriefe und Floater-Anleihen', isCorrect: true},
+            {answerText: 'Schuldverschreibungen und Wandelanleihen ', isCorrect: false},
+            {answerText: 'Zerobonds (Nullkupon-Anleihen) und Anleihen mit variabler Verzinsung ', isCorrect: false},
+        ]
+    },
+    
 ];
 
 export default function Level1Scenario1() {
@@ -57,7 +81,7 @@ export default function Level1Scenario1() {
         console.log(event.target.innerHTML);
     }
 
-    const [showScore, setShowScore] = useState(false);
+    const [showScore, setShowScore] = useState(false); // Zustand, um den Score anzuzeigen
 
     const START_TIME = 120;
     const initialMinutes = Math.floor(START_TIME / 60);
