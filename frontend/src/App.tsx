@@ -3,6 +3,8 @@
 import Signup from "./components/Signup";
 import Level1Quiz1 from "./components/levels/Level1Quiz1";
 import Level1Scenario1 from "./components/levels/Level1Scenario1";
+import Level2 from "./components/levels/Level2";
+import Level3Neu from "./components/levels/Level3_neu";
 import Leaderboard from "./components/Leaderboard";
 import { Routes, Route} from "react-router-dom";
 import Dashboard from "./admin/pages/Dashboard";
@@ -43,7 +45,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/sign-up" element={<Signup />} />
           <Route path="/level1Quiz1" element={<Level1Quiz1 />} />
-          <Route path="/level1Scenario1" element={<Level1Scenario1 />}/>
+          <Route path="/Level1Scenario1" element={<Level1Scenario1 />}/>
           <Route path="/Leaderboard" element={<Leaderboard />} />
           {/* ADMIN Routes you have to add a protected route */}
           <Route path="/admin/Dashboard" element={<Dashboard/>} />
@@ -73,7 +75,9 @@ function App() {
           <Route path="/risikoidentifikation" element={<Risikoidentifikation />} />
           <Route path="/risikobewertung" element={<Risikobewertung />} />
           <Route path="/risikostrategie" element={<Risikostrategie />} />
-          <Route path="/level2" element={< Fragen/>} />
+          <Route path="/level2_fragen" element={< Fragen/>} />
+          <Route path="/level2" element={< Level2/>} />
+          <Route path="/level3_new" element={<Level3Neu />} />
       </Routes>
     </div>
   )

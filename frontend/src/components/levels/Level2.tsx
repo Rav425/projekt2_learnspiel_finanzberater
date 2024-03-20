@@ -8,69 +8,30 @@ import buttonNotification from '../../assets/audio/button-sound.mp3'
 
 const questions = [
     {
-        questionText: 'Was ist Finanz im Geschäftskundenkontext? Bitte wählen Sie die richtige Antwort aus', // 5 Punkte
-        answerOptions: [
-            {answerText:'Die Bereitstellung von Finanzdienstleistungen und -produkten durch Banken und andere Finanzinstitute an Unternehmen.', isCorrect: true},
-            {answerText:'Die Verwaltung von Kapital und finanziellen Ressourcen innerhalb eines Unternehmens. ', isCorrect: false},
-            {answerText:'Die Bilanzierung und Berichterstattung über finanzielle Transaktionen in einem Unternehmen. ', isCorrect: false},
-        ],
-
+        questionText: 'Anna ist die Inhaberin eines kleinen Schmuckgeschäfts in einer belebten Einkaufsstraße. Sie möchte die finanzielle Leistung ihres Unternehmens analysieren und beschließt, eine Gewinn- und Verlustrechnung (GuV) für das vergangene Geschäftsjahr zu erstellen. Anna verwendet das Gesamtkostenverfahren für die Berechnung ihrer GuV. Sie hat die folgenden Daten für das Geschäftsjahr gesammelt: Gesamter Umsatz: 150.000 Euro, Kosten für Waren: 60.000 Euro, Miete für das Ladenlokal: 24.000 Euro, Gehälter für Mitarbeiter: 40.000 Euro, Werbekosten: 10.000 Euro, Sonstige Betriebsausgaben: 8.000 Euro. ',
+       
+        correctAnswer: 8000, // Angenommener korrekter Antwortwert für das Beispiel
     },
     {
-        questionText: "Bietet Finanzberatung eine breite Palette von Beratungsaspekten an, darunter Versicherungs-, Vorsorge-, Vermögens- und Anlagenberatung, Immobilienberatung sowie Schuldnerberatung?",    // 5 Punkte
-        answerOptions: [
-            {answerText:'Richtig', isCorrect: true},
-            {answerText:'Falsch', isCorrect: false},
-        ],
-    },
-    {
-        questionText: 'Was umfasst die Bedeutung von Liquidität im Kontext eines Unternehmens? Bitte wählen Sie die richtige Antwort aus.', // 5 Punkte
-        answerOptions: [
-            {answerText:'Die Fähigkeit eines Unternehmens, langfristige Verbindlichkeiten zu begleichen.', isCorrect: false},
-            {answerText:'Die Fähigkeit eines Unternehmens, kurzfristige Verbindlichkeiten mit vorhandenen liquiden Mitteln zu begleichen.', isCorrect: true},
-            {answerText:'Die Fähigkeit eines Unternehmens, langfristige Investitionen zu tätigen.', isCorrect: false},
-        ],
-    },
-    {
-        questionText: 'Was bezeichnet Compliance und welche Bedeutung hat sie für Unternehmen und Organisationen? Wählen Sie die richtige Antwort aus. ', // 5 Punkte
-        answerOptions: [
-            {answerText: 'Compliance bezeichnet die missbräuchliche Umgehung von Gesetzen und Richtlinien in Unternehmen und Organisationen, um wirtschaftliche Vorteile zu erlangen.', isCorrect: false},
-            {answerText: 'Compliance bezeichnet die konsequente Befolgung von Gesetzen, Richtlinien, Normen und freiwilligen Verpflichtungen in Unternehmen und Organisationen, um rechtliche und ethische Standards einzuhalten.', isCorrect: true},
-            {answerText: 'Compliance bezeichnet die Vernachlässigung von rechtlichen Vorgaben und ethischen Standards in Unternehmen und Organisationen, um Gewinne zu maximieren', isCorrect: false},
-        ]
-    },
-
-    {
-        questionText: 'Was ist die Kreditwürdigkeit und welches Ziel verfolgt sie?', // 5 Punkte
-        answerOptions: [
-            {answerText: 'Die Kreditwürdigkeit ist ein Maß dafür, wie zuverlässig ein potenzieller Kreditnehmer seine finanziellen Verpflichtungen erfüllen kann, und zielt darauf ab, das Risiko eines Zahlungsausfalls zu minimieren.', isCorrect: true},
-            {answerText: 'Die Kreditwürdigkeit bezeichnet die finanzielle Stabilität eines Kreditgebers und zielt darauf ab, den potenziellen Gewinn aus Kreditvergaben zu maximieren.', isCorrect: false},
-            {answerText: 'Die Kreditwürdigkeit ist eine rechtliche Regelung, die die Bedingungen für die Kreditvergabe festlegt und zielt darauf ab, die Verbraucher vor ausbeuterischen Kreditpraktiken zu schützen.', isCorrect: false},
-        ]
-    },
-
-    {
-        questionText: 'Die Investitionsbewertung ist entscheidend, um die Rentabilität und den Nutzen von Investitionen zu bewerten. Dafür werden Techniken wie die Kapitalwertmethode, die interne Zinsfußmethode und die Amortisationsdauer angewendet. Bitte wählen Sie die richtige Antwort aus ', // 5 Punkte
-        answerOptions: [
-            {answerText: 'Richtig', isCorrect: true},
-            {answerText: 'Falsch', isCorrect: false},
-        ]
-    },
-
-    {
-        questionText: 'Welche Arten von Anleihen gibt es? Bitte wählen Sie die richtige Antwort aus ', // 5 Punkte
-        answerOptions: [
-            {answerText: 'Staatsanleihen und Unternehmensanleihen', isCorrect: true},
-            {answerText: 'Aktienanleihen und Hybridanleihen ', isCorrect: false},
-            {answerText: 'Pfandbriefe und Floater-Anleihen', isCorrect: true},
-            {answerText: 'Schuldverschreibungen und Wandelanleihen ', isCorrect: false},
-            {answerText: 'Zerobonds (Nullkupon-Anleihen) und Anleihen mit variabler Verzinsung ', isCorrect: false},
-        ]
+        questionText: "Markus ist der Geschäftsführer eines kleinen IT-Unternehmens, das sich auf die Entwicklung von Softwarelösungen für kleine und mittelständische Unternehmen spezialisiert hat. Er möchte den Cashflow seines Unternehmens für das vergangene Geschäftsjahr berechnen, um die finanzielle Leistungsfähigkeit des Unternehmens zu analysieren und zukünftige Investitionsentscheidungen zu treffen.Einzahlungen: Softwarelizenzen 300.000 Euro, kundenspezifische Entwicklungen 200.000 Euro, Sonstige 50.000 Euro; Auszahlungen: Betriebskosten 150.000 Euro, Gehälter 200.000 Euro, Entwicklungskosten 100.000 Euro, Sonstige 50.000 Euro.",
+        correctAnswer: 5000, // Angenommener korrekter Antwortwert für das Beispiel
     },
     
+    {
+        questionText: 'Ein Unternehmen, das sein Kapital gewinnbringend anlegen möchte, erwägt die Investition von 10.000 Euro in einen Sparbrief mit einem festen Zinssatz von 3% pro Jahr über fünf Jahre und möchte die erwartete Rendite dieser Anlage berechnen',
+        correctAnswer: 15, // Angenommener korrekter Antwortwert für das Beispiel
+    },
+    {
+    questionText: 'Ein Geschäftskunde plant, 50.000 Euro in ein etabliertes Technologieunternehmen mit einer durchschnittlichen jährlichen Rendite von 7% über die letzten Jahre zu investieren, hält die Investition für 5 Jahre, minimiert Risiken und versteht, dass Vergangenheitsperformance keine Garantie, aber ein Stabilitätsindikator ist.',
+        correctAnswer: 82.768, //  Angenommener korrekter Antwortwert für das Beispiel
+    },
+    {
+    questionText: 'Ein Startup sichert sich eine 1 Million Euro VC-Investition für 8% Firmenanteile. Dies setzt den Unternehmenswert nach der Investition (Post-Money-Value) auf 12,5 Millionen Euro.',
+    correctAnswer: 12500000, // m Angenommener korrekter Antwortwert für das Beispiel
+},
 ];
 
-export default function Level1Scenario1() {
+export default function Level2() {
     const [isAnswerSelected, setAnswerSelected] = useState(null);
     // const [isInputChecked, setInputChecked] = useState(false);
     // const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -81,9 +42,9 @@ export default function Level1Scenario1() {
         console.log(event.target.innerHTML);
     }
 
-    const [showScore, setShowScore] = useState(false); // Zustand, um den Score anzuzeigen
+    const [showScore, setShowScore] = useState(false);
 
-    const START_TIME = 120;
+    const START_TIME = 600;
     const initialMinutes = Math.floor(START_TIME / 60);
     const initialSeconds = START_TIME % 60;
 
@@ -111,7 +72,7 @@ export default function Level1Scenario1() {
             } else {
                 clearInterval(interval);
                 alert('Die Zeit ist abgelaufen');
-                this.endQuiz();
+                location.href = '/startseite';
             }
     
             setRemainingTime({
@@ -125,19 +86,16 @@ export default function Level1Scenario1() {
             clearInterval(interval);
         };
     }, []);
-    
+    const [userAnswer, setUserAnswer] = useState('');
     const correctSound = document.getElementById('correct-sound') as HTMLAudioElement
     const wrongSound = document.getElementById('wrong-sound') as HTMLAudioElement
     const buttonSound = document.getElementById('button-sound') as HTMLAudioElement
-    const [score, setScore] = useState(0);
     const handleInputChange = (index: number) => {
         setAnswerSelected(index)
         // setInputChecked(true)
 
-        if (questions[currentQuestion].answerOptions[index].isCorrect) {
+        if (questions[currentQuestion].correctAnswer === Number(userAnswer)) {
             toast.success('Richtige Antwort!');
-            setScore(score + 2);
-
             setTimeout(() => {
                 correctSound.play();
             }, 500)
@@ -153,12 +111,12 @@ export default function Level1Scenario1() {
         }, 1500);
         
     }
+    
 
     const playButtonSound = () => {
         buttonSound.play();
     }
-
-
+    const [score, setScore] = useState(0); 
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const goNextQuestion = () => {
         playButtonSound();
@@ -170,8 +128,22 @@ export default function Level1Scenario1() {
         }
         else {
             alert('Sie haben das Ende des Quiz erreicht')
-            location.href = '/startseite';
+            location.href = '/level1Quiz1'
             // setShowScore(true);
+        }
+        if (questions[currentQuestion].correctAnswer === Number(userAnswer)) {
+            toast.success('Richtige Antwort!');
+            
+            setScore(score + 2);
+            setTimeout(() => {
+                correctSound.play();
+
+            }, 500)
+        } else {
+            toast.error('Falsche Antwort!');
+            setTimeout(() => {
+                wrongSound.play();
+            })
         }
     }
     const goPreviousQuestion = () => {
@@ -181,22 +153,6 @@ export default function Level1Scenario1() {
             // setInputChecked(false);
             setAnswerSelected(null);
         }
-    }
-    
-    // end the quiz
-    const endQuiz = () => {
-        alert('Der Quiz ist beendet!')
-        const {state} = this;
-
-        const playerStats = {
-            score: state.score,
-            questions: state.questions,
-            correctAnswers: state.correctAnswers,
-            wrongAnswers: state.wrongAnswers
-        };
-        console.log(playerStats);
-        location.href = '/startseite';
-
     }
 
   return (
@@ -236,8 +192,17 @@ export default function Level1Scenario1() {
                             <p className='p-4'>{questions[currentQuestion].questionText}</p>
                         </div>
                         <div className="block w-2/4">
-                            {questions[currentQuestion].answerOptions.map((answerOption, index) => <div className="border-2 border-gray-200 pl-2 py-3 hover:bg-sky-300 hover:bg-opacity-50 mb-2"><label onClick={onAnswerClick}  className='pr-5 cursor-pointer' ><input onChange={() => handleInputChange(index)} checked={isAnswerSelected === index} id={`checkbox_id${index}`} className='pl-4 ml-4 mr-3' type="checkbox" name="" />{answerOption.answerText}</label></div>) }
+                        {/* <p>{questions[currentQuestion].questionText}</p> */}
+                        <p>Schreiben Sie ihnen die Ergebnislösung. </p>
+                            <input
+                                type="number"
+                                value={userAnswer}
+                                onChange={(e) => setUserAnswer(e.target.value)}
+                                className="mt-2 border-2 border-gray-200"
+                            />
+                            
                         </div>
+                        
                     </div> 
                     <button onClick={goNextQuestion}  className={`ml-4 text-lg py-2 w-36 outline-none my-3 float-right bg-green-500 cursor-pointer'`}>Weiter</button>
                     <button onClick={goPreviousQuestion} disabled={currentQuestion === 0} className={`text-lg py-2 w-36 outline-none my-3 float-right ${currentQuestion === 0 ? 'bg-gray-500 cursor-not-allowed opacity-50' : 
@@ -248,4 +213,3 @@ export default function Level1Scenario1() {
     </div>
   )
 }
-
