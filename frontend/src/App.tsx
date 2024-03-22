@@ -17,7 +17,6 @@ import IntroductionPage from './pages/IntroductionPage'; // Der Importpfad sollt
 import FahigkeitenPage from './pages/FahigkeitenPage';
 import LevelSelectorPage from './pages/LevelSelectorPage';
 // import LeaderboardPage from './LeaderboardPage';
-import WichtigeBegriffe from "./pages/WichtigeBegriffe";
 import Inhalt1 from "./pages/Inhalt1";
 import Inhalt2 from "./pages/Inhalt2";
 import Inhalt3 from "./pages/Inhalt3";
@@ -60,7 +59,6 @@ function App() {
 
           <Route path="/startseite" element={<Startseite />} />
           <Route path="/introduction" element={<IntroductionPage />} />
-          <Route path="/wichtigebegriffe" element={<WichtigeBegriffe />} />
           <Route path="/inhalt1" element={<Inhalt1 />} />
           <Route path="/inhalt2" element={<Inhalt2 />} />
           <Route path="/inhalt3" element={<Inhalt3 />} />

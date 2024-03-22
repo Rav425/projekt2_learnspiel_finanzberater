@@ -17,33 +17,33 @@ const IntroductionPage: React.FC = () => {
       <h1>Fachkenntnisse</h1>
       <div className="d-flex flex-wrap justify-content-between">
         {/* Box 1 */}
-        <Card className="m-2" style={{ width: '18rem' }} onClick={() => handleBoxClick('ThemaFinanzen')}>
+        <Card className="m-2" style={{ width: '18rem' }} onClick={() => handleBoxClick('inhalt1')}>
           <Card.Body>
-            <Card.Title><FontAwesomeIcon icon={faChartLine} /> Thema "Finanzen"</Card.Title>
+            <Card.Title><FontAwesomeIcon icon={faChartLine} /> Finanz, Finanzberatung, Bilanz, Cashflow"</Card.Title>
             <Button variant="primary">Erfahren Sie mehr</Button>
           </Card.Body>
         </Card>
 
         {/* Box 2 */}
-        <Card className="m-2" style={{ width: '18rem' }} onClick={() => handleBoxClick('Finanzberatung')}>
+        <Card className="m-2" style={{ width: '18rem' }} onClick={() => handleBoxClick('inhalt2')}>
           <Card.Body>
-            <Card.Title><FontAwesomeIcon icon={faBook} /> Finanzberatung</Card.Title>
+            <Card.Title><FontAwesomeIcon icon={faBook} /> Pre Money und Post Money, Rendite, Diversifikation, ROI</Card.Title>
             <Button variant="primary">Erfahren Sie mehr</Button>
           </Card.Body>
         </Card>
 
         {/* Box 3 */}
-        <Card className="m-2" style={{ width: '18rem' }} onClick={() => handleBoxClick('WichtigeBegriffe')}>
+        <Card className="m-2" style={{ width: '18rem' }} onClick={() => handleBoxClick('inhalt3')}>
           <Card.Body>
-            <Card.Title><FontAwesomeIcon icon={faQuestionCircle} /> Wichtige Begriffe und Definitionen</Card.Title>
+            <Card.Title><FontAwesomeIcon icon={faQuestionCircle} /> Finanzierungsarten, Investitionsbewertung, Steuersysteme und -gesetze, Finanzplanung</Card.Title>
             <Button variant="primary">Erfahren Sie mehr</Button>
           </Card.Body>
         </Card>
 
         {/* Box 4 */}
-        <Card className="m-2" style={{ width: '18rem' }} onClick={() => handleBoxClick('WiesoFinanzberatung')}>
+        <Card className="m-2" style={{ width: '18rem' }} onClick={() => handleBoxClick('inhalt4')}>
           <Card.Body>
-            <Card.Title><FontAwesomeIcon icon={faComments} /> Wieso Finanzberatung?</Card.Title>
+            <Card.Title><FontAwesomeIcon icon={faComments} /> Insolvenzgeldvorfinanzierung, Compliance, Kreditwürdigkeit, Leasing, Die Gewinn- und Verlustrechnung (GuV)</Card.Title>
             <Button variant="primary">Erfahren Sie mehr</Button>
           </Card.Body>
         </Card>
