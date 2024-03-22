@@ -193,14 +193,140 @@ export default function MarktforschungUndAnalyse() {
             </ul>
           </p>
         </div>
-        <span>Anwendungsbeispiel</span>
+        <span className="font-bold">Anwendungsbeispiel</span>
         <p className="text-lg leading-relaxed mb-4">
           Unternehmen innerhalb der EU sollen die EU-Regulierungen beim
           Entscheidungstreffen berücksichtigen.
         </p>
 
-        
-        {/* <!-- Weitere Inhaltsabschnitte entsprechend hinzufügen --> */}
+        <div>
+          <h3 className="text-2xl font-semibold text-blue-600 mb-3">
+            E = economic (wirtschaftlich):
+          </h3>
+          <p className="text-lg leading-relaxed mb-4">
+          Volkswirtschaftliche Lage und weitere wichtige Informationen zum Absatzmarkt sind entscheidende Faktoren für das Wirtschaftsgeschehen. Zu den wirtschaftlichen Einflussfaktoren gehören:
+            <ul className="list-disc">
+              <li>Wirtschaftswachstum</li>
+              <li>Bevölkerungszahl </li>
+              <li>Zinsniveau </li>
+              <li>Inflationsrate </li>
+              <li>Bildungsniveau </li>
+              <li>Wechselkurse</li>
+              <li>Handel </li>
+              <li>Steuersystem </li>
+              <li>Einkommen und Kaufkraft </li>
+              <li>Arbeitslosigkeit </li>
+              <li>Import- und Exportgeschäfte </li>
+            </ul>
+          </p>
+        </div>
+        <span className="font-bold">Anwendungsbeispiel</span>
+        <p className="text-lg leading-relaxed mb-4">
+          In den letzten fünfzig Jahren hat sich der Lebensstandard in Deutschland nahezu kontinuierlich erhöht. Diese Entwicklung hat auch zu einer Steigerung der Kaufkraft der Bevölkerung geführt. Somit sind Verbraucher bereit, mehr auszugeben.
+        </p>
+
+        <div>
+          <h3 className="text-2xl font-semibold text-blue-600 mb-3">
+          S = social (sozio-kulturell):
+          </h3>
+          <p className="text-lg leading-relaxed mb-4">
+          Egal, wo man investieren möchte, sollte die Struktur der Gesellschaft beachtet werden. Dazu gehört:
+            <ul className="list-disc">
+            <li>Alter der Bevölkerung </li>
+            <li>soziale Schicht </li>
+            <li>Sprachkenntnisse </li>
+            <li>Bildungsniveau </li>
+            <li>Werte </li>
+            <li>Religion</li>
+            <li>Rollenverständnis </li>
+            <li>demographische Entwicklung </li>
+            <li>Lebensstil </li>
+            <li>Mobilität </li>
+            <li>Kaufverhalten </li>
+            </ul>
+          </p>
+        </div>
+        <span className="font-bold">Anwendungsbeispiel</span>
+        <p className="text-lg leading-relaxed mb-4">
+        Internationale Unternehmen in Deutschland sollen darauf Achten, dass Deutsch die Hauptsprache von Deutschland ist. Das heißt, die Dienste auch auf Deutsch anzubieten.
+        </p>
+
+        <div>
+          <h3 className="text-2xl font-semibold text-blue-600 mb-3">
+          T = Technological (technologisch)
+          </h3>
+          <p className="text-lg leading-relaxed mb-4">
+          Die Berücksichtigung technologischer Faktoren ist von entscheidender Bedeutung für strategische Unternehmensentscheidungen, da sie sowohl Geschäftsabläufe als auch Geschäftsmodelle beeinflussen können. 
+          Technologische Fortschritte können in verschiedenen Bereichen auftreten: 
+    
+            <ul className="list-disc">
+            <li>Informationstechnologie</li>
+            <li>Kommunikationstechnologie</li>
+            <li>Logistik</li>
+            <li>Infrastruktur</li>
+            <li>Energieversorgung</li>
+            <li>Digitalisierung</li>
+            <li>Forschungsmittel</li>
+            <li>Staatliche und private Forschungs- und Entwicklungsausgaben (FuE)</li>
+            </ul>
+          </p>
+        </div>
+        <span className="font-bold">Anwendungsbeispiel</span>
+        <p className="text-lg leading-relaxed mb-4">
+        Die Infrastruktur in Deutschland ist äußerst leistungsfähig und trägt maßgeblich dazu bei, den Transport und die Distribution von Waren sicherer und effizienter zu gestalten.
+        </p>
+
+        <div>
+          <h3 className="text-2xl font-semibold text-blue-600 mb-3">
+          E = Environmental (Ökologisch)
+          </h3>
+          <p className="text-lg leading-relaxed mb-4">
+          Die ökologisch-geographischen Faktoren umfassen die Umweltbedingungen und die verfügbaren Ressourcen, die das Umfeld eines Unternehmens prägen. 
+
+          Zu den ökologisch-geographischen Einflussfaktoren gehören:
+            <ul className="list-disc">
+            <li>Umweltauflagen </li>
+            <li>Emissionen </li>
+            <li>Klima </li>
+            <li>Infrastruktur </li>
+            <li>Verfügbarkeit von Rohstoffquellen </li>
+            <li>Bewusstes Konsumverhalten </li>
+            <li>Energiequellen </li>
+            <li>Verbrauch </li>
+            <li>Recycling </li>
+            <li>Entsorgung </li>
+            </ul>
+          </p>
+        </div>
+        <span className="font-bold">Anwendungsbeispiel</span>
+        <p className="text-lg leading-relaxed mb-4">
+        Aufgrund des erhöhten Bewusstseins für den Klimawandel achten Konsumierende bei Unternehmen bewusst auf Nachhaltigkeit und auf umweltbewusste Produktionsweisen.
+        </p>
+
+        <div>
+          <h3 className="text-2xl font-semibold text-blue-600 mb-3">
+          L = Legal (Rechtlich)
+          </h3>
+          <p className="text-lg leading-relaxed mb-4">
+          Die rechtlichen Faktoren beeinflussen maßgeblich den Handlungsspielraum eines Unternehmens, da verschiedene Rechtssysteme und das Rechtsbewusstsein der Bevölkerung strategische Entscheidungen beeinflussen. 
+          Hier sind einige Beispiele für rechtliche Faktoren: 
+            <ul className="list-disc">
+            <li>Gesetzgebungen </li>
+            <li>Wettbewerbsrecht </li>
+            <li>Umweltrecht </li>
+            <li>Kartellrecht </li>
+            <li>Steuerrecht </li>
+            <li>Arbeitsrecht </li>
+            <li>Rechtssystem </li>
+            <li>Rechtsbewusstsein </li>
+            <li>Produkthaftung </li>
+            </ul>
+          </p>
+        </div>
+        <span className="font-bold">Anwendungsbeispiel</span>
+        <p className="text-lg leading-relaxed mb-4">
+        Traditionell hat Deutschland eine sehr strenge Gesetzgebung, und ein großer Anteil der deutschen Gesetze wurden von der EU übernommen.
+        </p>
       </div>
     </div>
   );
