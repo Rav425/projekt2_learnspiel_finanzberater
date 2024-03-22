@@ -25,7 +25,7 @@ import Inhalt4 from "./pages/Inhalt4";
 import AnalytischeMethodenInhalt from "./pages/AnalytischeMethodenInhalt";
 import MarktforschungUndAnalyse from "./pages/MarktforschungUndAnalyse";
 import EZeitreihenanalyse from "./pages/EZeitreihenanalyse";
-import Investitionsanalyse from "./pages/Investitionsanalyse";
+
 import FinanzBilanzanalyse from "./pages/FinanzUndBilanzanalyse";
 import KreditwuerdigkeitAnalyse from "./pages/KreditwuerdigkeitAnalyse";
 import Unternehmensbewertung from "./pages/Unternehmensbewertung";
@@ -36,6 +36,10 @@ import Risikobewertung from './pages/Risikobewertung';
 import Risikostrategie from './pages/Risikostrategie';
 import Fragen from './pages/Fragen';
 import AdminAddCategory from "./admin/pages/AdminAddCategory";
+
+import Kundenberatung from './pages/Kundenberatung';
+import FinanzUndBilanzanalyse from "./pages/FinanzUndBilanzanalyse";
+import Investitionsanalyse from "./pages/Investitionsanalyse";
 
 function App() {
 
@@ -78,6 +82,10 @@ function App() {
           <Route path="/level2_fragen" element={< Fragen/>} />
           <Route path="/level2" element={< Level2/>} />
           <Route path="/level3_new" element={<Level3Neu />} />
+          <Route path="/kundenberatung" element={<Kundenberatung />} />
+          <Route path="/finanz-und-bilanzanalyse" element={<FinanzUndBilanzanalyse />} />
+          <Route path="/investitionsanalyse" element={<Investitionsanalyse />} />
+      
       </Routes>
     </div>
   )
