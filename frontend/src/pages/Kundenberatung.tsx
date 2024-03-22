@@ -10,17 +10,17 @@ export default function Kundenberatung() {
         muss, was Kunden wollen und benötigen, um ihnen die richtige Lösung
         anbieten zu können. Dazu muss der Kundenberater gut zuhören und Empathie
         zeigen, sowie in der Lage sein, Wünsche und Bedürfnisse zu
-        identifizieren, die von den Kunden möglicherweise nicht direkt geäußert
+        identifizieren, die von den Kunden möglichePrweise nicht direkt geäußert
         werden. Klare Kommunikation und das Stellen der richtigen Fragen sind
         entscheidend, um die Perspektive der Kunden umfassend zu verstehen.
         Darüber hinaus ist es für Berater wichtig, Marktentwicklungen und Trends
-        zu verfolgen, um den Kunden relevante und aktuelle Lösungen anbieten zu
+        zu verfolgen, um den Kunden relevante unPd aktuelle Lösungen anbieten zu
         können. Berater sollten in der Lage sein, Informationen sinnvoll zu
         analysieren und Empfehlungen zu geben, die auf die individuellen
         Bedürfnisse jedes Kunden zugeschnitten sind. Die regelmäßige Überprüfung
         der Kundenzufriedenheit und das Einholen von Feedback sind essenziell,
         um die Qualität der Beratung kontinuierlich zu verbessern und eine gute
-        Beziehung zu den Kunden zu pflegen.Kundenbedürfnisse verstehen ist ein
+        Beziehung zu den KPunden zu pflegen.Kundenbedürfnisse verstehen ist ein
         zentraler Aspekt der Kundenberatung. Es bezieht sich darauf, die
         Wünsche, Erwartung und Anforderungen eines Kunden zu erkennen. Um dem
         Kunde passende Produkte oder Dienstleistungen anzubieten. Hier sind
