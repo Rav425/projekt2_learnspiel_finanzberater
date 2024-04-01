@@ -5,6 +5,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import correctNotification from '../../assets/audio/correct-answer.mp3';
 import wrongNotification from '../../assets/audio/wrong-answer.mp3';
 import buttonNotification from '../../assets/audio/button-sound.mp3'
+import { useAppSelector } from '../../redux/hooks';
+import { RootState } from '../../redux/store';
+
+import { saveLevelScore } from '../../api/apiCalls';
 
 const questions = [
     {
@@ -169,8 +173,8 @@ export default function Level1Scenario1() {
             setAnswerSelected(null);
         }
         else {
-            alert('Sie haben das Ende des Quiz erreicht')
-            location.href = '/startseite';
+           endQuiz();
+           clearInterval(interval);
             // setShowScore(true);
         }
     }
@@ -186,18 +190,124 @@ export default function Level1Scenario1() {
     // end the quiz
     const endQuiz = () => {
         alert('Der Quiz ist beendet!')
-        const {state} = this;
+        // const {state} = this;
 
-        const playerStats = {
-            score: state.score,
-            questions: state.questions,
-            correctAnswers: state.correctAnswers,
-            wrongAnswers: state.wrongAnswers
-        };
-        console.log(playerStats);
-        location.href = '/startseite';
+        // const playerStats = {
+        //     score: state.score,
+        //     questions: state.questions,
+        //     correctAnswers: state.correctAnswers,
+        //     wrongAnswers: state.wrongAnswers
+        // };
+        // console.log(playerStats);
+
+
+        // const userToken = document.cookie.split(';').find(cookie => cookie.trim().startsWith('access_token='));
+        // if (!userToken) {
+        //   toast.error('Bitte melden Sie sich an, um Ihre Punkte zu speichern.');
+        //   return;
+        // }
+
+        const userId = currentUser?.benutzer_ID;
+
+        saveLevelScore(userId, score);
+        // location.href = '/startseite';
 
     }
+
+    // stand 30.03.24
+    // Funktion, um den Gesamtscore am Ende des Levels zu speichern
+    const currentUser = useAppSelector((state: RootState) => state.user.currentUser)
+//   const saveLevelScore = async () => {
+//     try {
+//     //   const userToken = localStorage.getItem('access_token'); // TODO: Holen Sie die tatsächliche Benutzer-ID, z.B. aus dem Zustand oder Context
+//     const userToken = document.cookie.split(';').find(cookie => cookie.trim().startsWith('access_token='));
+//       const response = await fetch('/api/progress/save-progress', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//           // TODO: Authentifizierungstoken 
+//           'Authorization': `Bearer ${userToken}`
+//         },
+//         body: JSON.stringify({ userId: currentUser.benutzer_Id, totalPoints: score }),
+//       });
+
+//       if (!response.ok) {
+//         throw new Error('Score update failed');
+//       }
+
+//       const data = await response.json();
+//       console.log(data);
+      
+//       toast.success('Deine Punkte wurden gespeichert!');
+//     } catch (error) {
+//       toast.error('Fehler beim Speichern der Punkte.');
+//       console.error(error);
+//     }
+//   };
+
+// Test 2
+// const saveLevelScore = async () => {
+//     try {
+//       const cookieValue = document.cookie.split(';').find(cookie => cookie.trim().startsWith('access_token='));
+//       if (cookieValue) {
+//         // Entfernen des Prefix 'access_token='
+//         const userToken = cookieValue.split('=')[1];
+  
+//         const response = await fetch('/api/progress/save-progress/${userId}', {
+//           method: 'POST',
+//           headers: {
+//             'Content-Type': 'application/json',
+//             'Authorization': `Bearer ${userToken}`
+//           },
+//           body: JSON.stringify({ points: score }),
+//         });
+  
+//         if (!response.ok) {
+//           throw new Error('Fehler beim Speichern des Scores');
+//         }
+  
+//         // Verarbeitung der Serverantwort
+//         const data = await response.json();
+//         console.log('Score erfolgreich gespeichert:', data);
+//       } else {
+//         console.error('Benutzertoken nicht gefunden.');
+//       }
+//     } catch (error) {
+//       console.error('Fehler beim Speichern des Levelscores:', error);
+//     }
+//   };
+
+// const saveLevelScore = async () => {
+//     try {
+//       // Hier nehmen wir an, dass 'userId' und 'score' verfügbar sind
+//       // 'userId' muss aus dem aktuellen Benutzerzustand oder einer ähnlichen Quelle bezogen werden
+//       const userId = currentUser.benutzer_ID; // Stellen Sie sicher, dass dies der richtige Pfad zur Benutzer-ID ist
+//       const response = await fetch(`/api/progress/save-progress/${userId}`, {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ points: score }),
+//       });
+  
+//       if (!response.ok) {
+//         throw new Error('Fehler beim Speichern des Scores');
+//       }
+  
+//       // Verarbeitung der Serverantwort
+//       const data = await response.json();
+//       console.log('Score erfolgreich gespeichert:', data);
+//       toast.success('Deine Punkte wurden gespeichert!');
+  
+//     } catch (error) {
+//       console.error('Fehler beim Speichern des Levelscores:', error);
+//       toast.error('Fehler beim Speichern der Punkte.');
+//     }
+//   };
+  
+  // Stellen Sie sicher, dass diese Funktion am Ende des Quiz aufgerufen wird, z.B. nach der letzten Frage oder wenn die Zeit abgelaufen ist
+  
+  
 
   return (
       <div className="flex justify-center items-center h-screen bg-gray-200">

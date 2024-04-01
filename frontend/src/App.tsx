@@ -39,11 +39,13 @@ import AdminAddCategory from "./admin/pages/AdminAddCategory";
 import Kundenberatung from './pages/Kundenberatung';
 import FinanzUndBilanzanalyse from "./pages/FinanzUndBilanzanalyse";
 import Investitionsanalyse from "./pages/Investitionsanalyse";
+import Header from "./components/Header";
 
 function App() {
 
   return (
     <div>
+      <Header />
       <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/sign-up" element={<Signup />} />

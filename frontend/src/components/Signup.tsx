@@ -50,7 +50,7 @@ export default function Signup() {
         const data = await response.json()
         console.log(data)
         if (data.success === false) {
-          return dispatch(signInFailure(data.message));
+          dispatch(signInFailure(data.message));
         }
         if (response.ok) {
           dispatch(signInSuccess(data));

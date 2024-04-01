@@ -42,8 +42,7 @@ export const signup = async (req: Request, res: Response, next: NextFunction) =>
 
         // Neuen Benutzer in die Datenbank einfügen
         await db.promise().query(query, [firstname, lastname, username, email, hashedPassword]);
-       return next(errorHandler(201, "Benutzer erfolgreich erstellt."));
-
+        res.status(201).json({message: "Benutzer erfolgreich erstellt."});
     } catch (error) {
         next(error);
     }
