@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-import { signInFailure, signInStart, signInSuccess } from "../../redux/user/userSlice";
-import { RootState } from "../../redux/store";
+import { useAppSelector, useAppDispatch } from "../redux/hooks";
+import { signInFailure, signInStart, signInSuccess } from "../redux/user/userSlice";
 
 export default function Signup() {
   // Zustand für die Sichtbarkeit des Passwort zu verwalten.
@@ -12,17 +11,24 @@ export default function Signup() {
   interface FormData {
     firstname?: string;
     lastname?: string;
-    nickname?: string;
+    username?: string;
     email?: string;
     password?: string;
     confirmPassword?: string;
   }
 
-  const [formData, setFormData] = useState<FormData>({});
+  const [formData, setFormData] = useState<FormData>({
+    firstname: "",
+    lastname: "",
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
   // const [formData, setFormData] = useState({})
-  const { loading, error: errorMessage} = useSelector((state: RootState) => state.user);
+  const { loading, error: errorMessage} = useAppSelector((state) => state.user);
   const navigate = useNavigate()
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({...formData, [e.target.id]: e.target.value.trim()})
   }
@@ -30,7 +36,7 @@ export default function Signup() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log(formData);
-    if (!formData.firstname || !formData.lastname || !formData.nickname || !formData.email || !formData.password || !formData.confirmPassword) {
+    if (!formData.firstname || !formData.lastname || !formData.username || !formData.email || !formData.password || !formData.confirmPassword) {
       return dispatch(signInFailure("Bitte füllen Sie alle Felder aus"));
     }
     try {
@@ -41,17 +47,15 @@ export default function Signup() {
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(formData),
       } )
-      if (!response.ok) {
         const data = await response.json()
         console.log(data)
         if (data.success === false) {
           return dispatch(signInFailure(data.message));
         }
-        dispatch(signInSuccess(data));
-
-      }else {
-        navigate('/');
-      }
+        if (response.ok) {
+          dispatch(signInSuccess(data));
+          navigate('/');
+        }
     } catch (error) {
       if (error instanceof Error) {
         dispatch(signInFailure(error.message));
@@ -75,7 +79,7 @@ export default function Signup() {
         </div>
         <div className="flex flex-col py-2">
           <label className="mb-1 font-semibold">Benutzername</label>
-          <input className="border border-gray-400 p-2  focus:outline-blue-300 text-gray-800" type="text" id="nickname" onChange={handleChange} />
+          <input className="border border-gray-400 p-2  focus:outline-blue-300 text-gray-800" type="text" id="username" onChange={handleChange} />
         </div>
         <div className="flex flex-col py-2">
           <label className="mb-1 font-semibold">E-Mail-Adresse</label>

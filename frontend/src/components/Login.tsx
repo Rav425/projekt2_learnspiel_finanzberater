@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { signInStart, signInSuccess, signInFailure } from "../../redux/user/userSlice";
-import { useDispatch, useSelector } from "react-redux";
-import {UserState} from '../../redux/user/userSlice'
+import { signInStart, signInSuccess, signInFailure } from "../redux/user/userSlice";
+import { useAppSelector, useAppDispatch } from "../redux/hooks";
 
 
 export default function Login() {
@@ -16,22 +15,20 @@ export default function Login() {
   }
 
   const [formData, setFormData] = useState<FormData>({});
-  const { loading, error: errorMessage} = useSelector((state: UserState) => state.user);
+  const { loading, error: errorMessage} = useAppSelector((state) => state.user);
 
   const navigate = useNavigate()
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({...formData, [e.target.id]: e.target.value.trim()})
   }
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(formData);
-    if (formData.username || !formData.password) {
-      return dispatch(signInFailure("Bitte füllen Sie alle Felder aus"));
-    }
     try {
-      console.log(formData);
       dispatch(signInStart());
+      if (!formData.username || !formData.password) {
+        return dispatch(signInFailure("Bitte füllen Sie alle Felder aus"));
+      }
       const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
@@ -43,7 +40,6 @@ export default function Login() {
       }
 
       if (response.ok) {
-        console.log(data) /* testing  */
         dispatch(signInSuccess(data));
         navigate('/startseite');
       }
@@ -59,12 +55,12 @@ export default function Login() {
         <h2 className="text-center text-3xl font-bold py-2">Willkommen zurück</h2>
         <div className="flex flex-col py-2">
           <label className="mb-1 font-semibold">Benutzername</label>
-          <input className="border border-gray-400 p-2 focus:outline-blue-300 text-gray-800" type="text" onChange={handleChange}/>
+          <input className="border border-gray-400 p-2 focus:outline-blue-300 text-gray-800" id="username" type="text" onChange={handleChange}/>
         </div>
         <div className="flex flex-col py-2 relative">
           <label className="mb-1 font-semibold">Passwort</label>
           <div className="relative ">
-            <input className="w-full border border-gray-400 p-2 focus:outline-blue-300" type={visible ? "text" : "password"} onChange={handleChange}/>
+            <input className="w-full border border-gray-400 p-2 focus:outline-blue-300" id="password" type={visible ? "text" : "password"} onChange={handleChange}/>
             <div className="absolute flex items-center p-2 right-0 top-0 bottom-0 cursor-pointer" onClick={() => setVisible(!visible)}>
               {
                 visible ? <FaEye /> : <FaEyeSlash />
