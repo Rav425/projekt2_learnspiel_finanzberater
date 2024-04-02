@@ -4,7 +4,7 @@ import Signup from "./components/Signup";
 import Level1Quiz1 from "./components/levels/Level1Quiz1";
 import Level1Scenario1 from "./components/levels/Level1Scenario1";
 import Level2 from "./components/levels/Level2";
-import Level3Neu from "./components/levels/Level3_neu";
+import Level3 from "./components/levels/Level3";
 import Leaderboard from "./components/Leaderboard";
 import { Routes, Route} from "react-router-dom";
 import Dashboard from "./admin/pages/Dashboard";
@@ -81,7 +81,7 @@ function App() {
           <Route path="/risikostrategie" element={<Risikostrategie />} />
           <Route path="/level2_fragen" element={< Fragen/>} />
           <Route path="/level2" element={< Level2/>} />
-          <Route path="/level3_new" element={<Level3Neu />} />
+          <Route path="/level3" element={<Level3 />} />
           <Route path="/kundenberatung" element={<Kundenberatung />} />
           <Route path="/finanz-und-bilanzanalyse" element={<FinanzUndBilanzanalyse />} />
           <Route path="/investitionsanalyse" element={<Investitionsanalyse />} />

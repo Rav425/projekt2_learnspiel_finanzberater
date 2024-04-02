@@ -8,7 +8,7 @@ import buttonNotification from '../../assets/audio/button-sound.mp3'
 import { useAppSelector } from '../../redux/hooks';
 import { RootState } from '../../redux/store';
 
-import { saveLevelScore } from '../../api/apiCalls';
+import { updateUserProgress } from '../../api/apiCalls';
 
 const questions = [
     {
@@ -174,7 +174,7 @@ export default function Level1Scenario1() {
         }
         else {
            endQuiz();
-           clearInterval(interval);
+        //    clearInterval(interval);
             // setShowScore(true);
         }
     }
@@ -209,7 +209,7 @@ export default function Level1Scenario1() {
 
         const userId = currentUser?.benutzer_ID;
 
-        saveLevelScore(userId, score);
+        updateUserProgress(userId, score);
         // location.href = '/startseite';
 
     }

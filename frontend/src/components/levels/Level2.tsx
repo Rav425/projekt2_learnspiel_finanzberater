@@ -5,6 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import correctNotification from '../../assets/audio/correct-answer.mp3';
 import wrongNotification from '../../assets/audio/wrong-answer.mp3';
 import buttonNotification from '../../assets/audio/button-sound.mp3'
+import { updateUserProgress } from '../../api/apiCalls';
+import { useAppSelector } from '../../redux/hooks';
+import { RootState } from '../../redux/store';
 
 const questions = [
     {
@@ -127,8 +130,7 @@ export default function Level2() {
             setAnswerSelected(null);
         }
         else {
-            alert('Sie haben das Ende des Quiz erreicht')
-            location.href = '/level1Quiz1'
+            endQuiz();
             // setShowScore(true);
         }
         if (questions[currentQuestion].correctAnswer === Number(userAnswer)) {
@@ -153,6 +155,19 @@ export default function Level2() {
             // setInputChecked(false);
             setAnswerSelected(null);
         }
+    }
+
+    const currentUser = useAppSelector((state: RootState) => state.user.currentUser)
+
+    // end the quiz
+    const endQuiz = () => {
+        alert('Der Quiz ist beendet!')
+
+        const userId = currentUser?.benutzer_ID;
+
+        updateUserProgress(userId, score);
+        // location.href = '/startseite';
+
     }
 
   return (

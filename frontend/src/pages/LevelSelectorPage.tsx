@@ -16,7 +16,7 @@ const LevelSelectorPage: React.FC = () => {
         break;
         default:
       case '3':
-        navigate('/level3_new'); // Navigieren zur Level-3-Seite
+        navigate('/level3'); // Navigieren zur Level-3-Seite
         break;
     console.log(`Level ${level} wurde gewählt.`);
     // navigate(`/level/${level}`);

@@ -25,8 +25,18 @@ export const updateUserProgress = async (req: Request, res: Response, next: Next
     try {
         const userId = req.params.userId;
         const { points } = req.body;
-        const query = `UPDATE ergebnisse SET erg_punkte = ? WHERE benutzer_ID = ?`;
-        await db.promise().query(query, [points, userId]);
+
+        const [existingPoints] = await db.promise().query<RowDataPacket[]>('SELECT erg_punkte FROM ergebnisse WHERE benutzer_ID = ?', [userId]);
+
+        if (existingPoints.length > 0) {
+            // update existing points
+            await db.promise().query('UPDATE ergebnisse SET erg_punkte = erg_punkte + ? WHERE benutzer_ID = ?', [points, userId]);
+        } else {
+            await db.promise().query('INSERT INTO ergebnisse (benutzer_ID, erg_punkte) VALUES (?, ?)', [userId, points]);
+        }
+
+        // const query = `UPDATE ergebnisse SET erg_punkte + ? WHERE benutzer_ID = ?`;
+        // await db.promise().query(query, [points, userId]);
         return res.status(200).json({message: "Punkte erfolgreich aktualisiert."});
     } catch (error) {
         next(error);
