@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 26. Mrz 2024 um 19:22
+-- Erstellungszeit: 03. Apr 2024 um 20:28
 -- Server-Version: 5.7.39
 -- PHP-Version: 7.4.33
 
@@ -44,7 +44,12 @@ CREATE TABLE `benutzer` (
 
 INSERT INTO `benutzer` (`benutzer_ID`, `vorname`, `nachname`, `benutzername`, `email`, `profilbild`, `passwort`, `benutzer_typ`) VALUES
 (1, 'John', 'Doe', 'johndoe', 'doe@test.com', '', '$2a$10$k45wUUCXlxcEAkaaobtGDergRJLtF.UBM9Zxs6tCOMDSDvPHPgPIq', 'benutzer'),
-(2, 'John', 'Snow', 'john_snow', 'john.snow@gmail.com', NULL, '$2a$10$nNsCaALOMHMMba772aCuh.BpITwJHMt/ejrTSLp0zoLfpA9JeP.wu', 'benutzer');
+(2, 'John', 'Snow', 'john_snow', 'john.snow@gmail.com', NULL, '$2a$10$nNsCaALOMHMMba772aCuh.BpITwJHMt/ejrTSLp0zoLfpA9JeP.wu', 'benutzer'),
+(3, 'Thomas', 'Wagner', 'thomy1', 'thom.wagner@gmail.com', NULL, '$2a$10$PidlZJDzbXWf.ctHAoAMDe8bwEVi4rZJbzVxw0HHvdMyNdThoGMJq', 'benutzer'),
+(6, 'Testuser2', 'Testuser2', 'testuser2', 'testuser2@test.com', NULL, '$2a$10$91xuvw.rZeIBsX4pdsehCOECfvd3RF8D/bhHLGU9jxrM4x4pvPkrW', 'benutzer'),
+(9, 'Thomas', 'Mueller', 'esmuellert25', 'esmuellert@test.com', NULL, '$2a$10$g3kEZI7rN6.YrxrMEXCbQ.A29z.3BgZix/vjL6ccHD8lXtBSg2lI.', 'benutzer'),
+(10, 'Benjamin', 'Mueller', 'beni12', 'ben@test.com', NULL, '$2a$10$ea7vt1VgHboYrvh4oedIJeh2jHoOWyFQGZDvjiEgM53uR98oqaI7G', 'benutzer'),
+(11, 'Kevin', 'Mueller', 'mueller', 'mueller@gmail.com', NULL, '$2a$10$sL2Xo48UN6qOfKjfXPbjauHQN/wb9hcOaAG46GgBJIsQ6yid5kL6y', 'benutzer');
 
 -- --------------------------------------------------------
 
@@ -63,7 +68,12 @@ CREATE TABLE `ergebnisse` (
 --
 
 INSERT INTO `ergebnisse` (`erg_ID`, `benutzer_ID`, `erg_punkte`) VALUES
-(1, 1, 45);
+(1, 1, 45),
+(2, 2, 40),
+(4, 3, 50),
+(5, 6, 34),
+(6, 11, 22),
+(8, 10, 30);
 
 -- --------------------------------------------------------
 
@@ -236,13 +246,13 @@ ALTER TABLE `quizz_fragen`
 -- AUTO_INCREMENT für Tabelle `benutzer`
 --
 ALTER TABLE `benutzer`
-  MODIFY `benutzer_ID` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `benutzer_ID` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT für Tabelle `ergebnisse`
 --
 ALTER TABLE `ergebnisse`
-  MODIFY `erg_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `erg_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT für Tabelle `lernstoff`
